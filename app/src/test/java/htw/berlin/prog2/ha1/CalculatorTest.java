@@ -107,4 +107,34 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("should show the dot number")
+    void testEnteredDotFirst() {
+        Calculator calc = new Calculator();
+
+        calc.pressDotKey();
+        calc.pressDigitKey(7);
+
+        String expected = "0.7";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    @DisplayName("should show the dot number ")
+    void testFailedDivisionByZero() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+        calc.pressBinaryOperationKey("/");
+        calc.pressDigitKey(5);
+
+        String excepted = "0";
+        String actual = calc.readScreen();
+
+        assertEquals(excepted, actual);
+    }
 }
