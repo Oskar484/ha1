@@ -137,4 +137,21 @@ class CalculatorTest {
 
         assertEquals(excepted, actual);
     }
+
+    // Bugfix für Fehlercode 1
+    public void pressDotKey() {
+        if (screen.contains(".")) {
+            if (screen.equals("0")) {
+                screen = "0.";
+            } else {
+                screen += ".";
+            }
+        }
+    // Bugfix für Fehlercode 2
+        public void pressEqualsKey() {
+            if (operator.equals("/") && secondNumber.equals("0")) {
+                screen = "Error";
+            }
+        }
+    }
 }
