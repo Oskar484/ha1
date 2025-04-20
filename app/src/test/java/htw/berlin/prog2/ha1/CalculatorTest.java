@@ -124,7 +124,7 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("should show the dot number ")
+    @DisplayName("when number is divided by 0 it should display 0")
     void testFailedDivisionByZero() {
         Calculator calc = new Calculator();
 
